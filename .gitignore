@@ -1,0 +1,11 @@
+*.zip
+
+*.wdb
+*.sim/
+*.runs/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.jou
+*.log
+
