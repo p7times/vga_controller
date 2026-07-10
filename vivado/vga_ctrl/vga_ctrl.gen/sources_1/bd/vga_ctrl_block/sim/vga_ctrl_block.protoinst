@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"vga_ctrl_block": {
+			"proto_instances": {
+			}
+		}
+	}
+}

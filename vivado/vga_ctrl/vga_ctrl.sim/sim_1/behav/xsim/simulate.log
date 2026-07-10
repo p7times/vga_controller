@@ -1,0 +1,32 @@
+Time resolution is 1 ps
+============================================================
+start vga 640x480 generic timing test
+reset_test_en          = 1
+half_frame_check_count = 2
+full_frame_check_count = 4
+============================================================
+============================================================
+start reset test
+half_frame_check_count = 2
+============================================================
+[240000] start half frame before reset, pixels=210000
+[8400240000] half frame before reset summary: active=168080 blank=41920 hsync=25152 vsync=0 expected=168080
+[8400240000] start half frame before reset, pixels=210000
+[16800240000] half frame before reset summary: active=139120 blank=70880 hsync=25248 vsync=1600 expected=139120
+[16800240000] apply reset after half frame section
+============================================================
+reset test done, starting full frame test after reset
+============================================================
+[16800440000] start full frame 0 check
+[33600440000] full frame 0 summary: active=307200 blank=112800 hsync=50400 vsync=1600 expected=307200
+[33600440000] start full frame 1 check
+[50400440000] full frame 1 summary: active=307200 blank=112800 hsync=50400 vsync=1600 expected=307200
+[50400440000] start full frame 2 check
+[67200440000] full frame 2 summary: active=307200 blank=112800 hsync=50400 vsync=1600 expected=307200
+[67200440000] start full frame 3 check
+[84000440000] full frame 3 summary: active=307200 blank=112800 hsync=50400 vsync=1600 expected=307200
+============================================================
+vga test passed with 0 errors
+============================================================
+$finish called at time : 84000440 ns : File "/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/rtl/TB_vga.sv" Line 418
+INFO: xsimkernel Simulation Memory Usage: 365748 KB (Peak: 431284 KB), Simulation CPU Usage: 10490 ms

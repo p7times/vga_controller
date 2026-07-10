@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_vga_top_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_vga_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="84.000440001 ms"></ZoomEndTime>
+      <Cursor1Time time="13.849820000 ms"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="254"></NameColumnWidth>
+      <ValueColumnWidth column_width="89"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="34" />
+   <wvobject type="logic" fp_name="/tb_vga_top/pix_clk">
+      <obj_property name="ElementShortName">pix_clk</obj_property>
+      <obj_property name="ObjectShortName">pix_clk</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_vga_top/rst_n">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_vga_top/hsync">
+      <obj_property name="ElementShortName">hsync</obj_property>
+      <obj_property name="ObjectShortName">hsync</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_vga_top/vsync">
+      <obj_property name="ElementShortName">vsync</obj_property>
+      <obj_property name="ObjectShortName">vsync</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/vga_red">
+      <obj_property name="ElementShortName">vga_red[3:0]</obj_property>
+      <obj_property name="ObjectShortName">vga_red[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/vga_green">
+      <obj_property name="ElementShortName">vga_green[3:0]</obj_property>
+      <obj_property name="ObjectShortName">vga_green[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/vga_blue">
+      <obj_property name="ElementShortName">vga_blue[3:0]</obj_property>
+      <obj_property name="ObjectShortName">vga_blue[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/errors">
+      <obj_property name="ElementShortName">errors[31:0]</obj_property>
+      <obj_property name="ObjectShortName">errors[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/frame">
+      <obj_property name="ElementShortName">frame[31:0]</obj_property>
+      <obj_property name="ObjectShortName">frame[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/chunk">
+      <obj_property name="ElementShortName">chunk[31:0]</obj_property>
+      <obj_property name="ObjectShortName">chunk[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/cycle">
+      <obj_property name="ElementShortName">cycle[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cycle[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/model_h">
+      <obj_property name="ElementShortName">model_h[31:0]</obj_property>
+      <obj_property name="ObjectShortName">model_h[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/model_v">
+      <obj_property name="ElementShortName">model_v[31:0]</obj_property>
+      <obj_property name="ObjectShortName">model_v[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/active_pixels">
+      <obj_property name="ElementShortName">active_pixels[31:0]</obj_property>
+      <obj_property name="ObjectShortName">active_pixels[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/blank_pixels">
+      <obj_property name="ElementShortName">blank_pixels[31:0]</obj_property>
+      <obj_property name="ObjectShortName">blank_pixels[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/hsync_pixels">
+      <obj_property name="ElementShortName">hsync_pixels[31:0]</obj_property>
+      <obj_property name="ObjectShortName">hsync_pixels[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/vsync_pixels">
+      <obj_property name="ElementShortName">vsync_pixels[31:0]</obj_property>
+      <obj_property name="ObjectShortName">vsync_pixels[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/expected_pixels">
+      <obj_property name="ElementShortName">expected_pixels[31:0]</obj_property>
+      <obj_property name="ObjectShortName">expected_pixels[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_vga_top/exp_active">
+      <obj_property name="ElementShortName">exp_active</obj_property>
+      <obj_property name="ObjectShortName">exp_active</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_vga_top/exp_hsync_area">
+      <obj_property name="ElementShortName">exp_hsync_area</obj_property>
+      <obj_property name="ObjectShortName">exp_hsync_area</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_vga_top/exp_vsync_area">
+      <obj_property name="ElementShortName">exp_vsync_area</obj_property>
+      <obj_property name="ObjectShortName">exp_vsync_area</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_vga_top/exp_hsync">
+      <obj_property name="ElementShortName">exp_hsync</obj_property>
+      <obj_property name="ObjectShortName">exp_hsync</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_vga_top/exp_vsync">
+      <obj_property name="ElementShortName">exp_vsync</obj_property>
+      <obj_property name="ObjectShortName">exp_vsync</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/exp_r">
+      <obj_property name="ElementShortName">exp_r[3:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_r[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/exp_g">
+      <obj_property name="ElementShortName">exp_g[3:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_g[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/exp_b">
+      <obj_property name="ElementShortName">exp_b[3:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_b[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_vga_top/h_pol">
+      <obj_property name="ElementShortName">h_pol</obj_property>
+      <obj_property name="ObjectShortName">h_pol</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_vga_top/v_pol">
+      <obj_property name="ElementShortName">v_pol</obj_property>
+      <obj_property name="ObjectShortName">v_pol</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_vga_top/reset_test_en">
+      <obj_property name="ElementShortName">reset_test_en</obj_property>
+      <obj_property name="ObjectShortName">reset_test_en</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/half_frame_check_count">
+      <obj_property name="ElementShortName">half_frame_check_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">half_frame_check_count[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/full_frame_check_count">
+      <obj_property name="ElementShortName">full_frame_check_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">full_frame_check_count[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/exp_red">
+      <obj_property name="ElementShortName">exp_red[3:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_red[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/exp_green">
+      <obj_property name="ElementShortName">exp_green[3:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_green[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_vga_top/exp_blue">
+      <obj_property name="ElementShortName">exp_blue[3:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_blue[3:0]</obj_property>
+   </wvobject>
+</wave_config>

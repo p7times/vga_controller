@@ -1,0 +1,266 @@
+
+*** Running vivado
+    with args -log vga_ctrl_block_clk_wiz_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source vga_ctrl_block_clk_wiz_0_0.tcl
+
+INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detected. Your current license is active and will expire on 09-jul-2027.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Fri Jul 10 10:26:49 2026
+# Process ID         : 37856
+# Current directory  : /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.runs/vga_ctrl_block_clk_wiz_0_0_synth_1
+# Command line       : vivado -log vga_ctrl_block_clk_wiz_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source vga_ctrl_block_clk_wiz_0_0.tcl
+# Log file           : /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.runs/vga_ctrl_block_clk_wiz_0_0_synth_1/vga_ctrl_block_clk_wiz_0_0.vds
+# Journal file       : /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.runs/vga_ctrl_block_clk_wiz_0_0_synth_1/vivado.jou
+# Running On         : nemesiseanu
+# Platform           : Linuxmint
+# Operating System   : Linux Mint 22.3
+# Processor Detail   : Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz
+# CPU Frequency      : 4451.012 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 16670 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20965 MB
+# Available Virtual  : 14713 MB
+#-----------------------------------------------------------
+
+****** Vivado v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Fri Jul 10 10:26:49 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source vga_ctrl_block_clk_wiz_0_0.tcl -notrace
+Command: synth_design -top vga_ctrl_block_clk_wiz_0_0 -part xc7a35ticpg236-1L -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Vivado_Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Vivado_Synthesis' and/or device 'xc7a35ti'
+INFO: [Device 21-403] Loading part xc7a35ticpg236-1L
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 37952
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2383.438 ; gain = 518.062 ; free physical = 1503 ; free virtual = 12823
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'vga_ctrl_block_clk_wiz_0_0' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0.v:66]
+INFO: [Synth 8-6157] synthesizing module 'vga_ctrl_block_clk_wiz_0_0_clk_wiz' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0_clk_wiz.v:66]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [/home/user/Vivado/2026.1/Vivado/scripts/rt/data/unisim_comp.v:82818]
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (0#1) [/home/user/Vivado/2026.1/Vivado/scripts/rt/data/unisim_comp.v:82818]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [/home/user/Vivado/2026.1/Vivado/scripts/rt/data/unisim_comp.v:95724]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 3.637500e+01 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000e+00 - type: double 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKIN1_PERIOD bound to: 1.000000e+01 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 3.612500e+01 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 5.000000e-01 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000e+00 - type: double 
+	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 4 - type: integer 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (0#1) [/home/user/Vivado/2026.1/Vivado/scripts/rt/data/unisim_comp.v:95724]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [/home/user/Vivado/2026.1/Vivado/scripts/rt/data/unisim_comp.v:2678]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [/home/user/Vivado/2026.1/Vivado/scripts/rt/data/unisim_comp.v:2678]
+INFO: [Synth 8-6155] done synthesizing module 'vga_ctrl_block_clk_wiz_0_0_clk_wiz' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0_clk_wiz.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'vga_ctrl_block_clk_wiz_0_0' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0.v:66]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2478.375 ; gain = 613.000 ; free physical = 1375 ; free virtual = 12697
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2496.188 ; gain = 630.812 ; free physical = 1371 ; free virtual = 12693
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2496.188 ; gain = 630.812 ; free physical = 1371 ; free virtual = 12693
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2502.125 ; gain = 0.000 ; free physical = 1363 ; free virtual = 12686
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0_board.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0_board.xdc] for cell 'inst'
+Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0.xdc] for cell 'inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/vga_ctrl_block_clk_wiz_0_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/vga_ctrl_block_clk_wiz_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.runs/vga_ctrl_block_clk_wiz_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.runs/vga_ctrl_block_clk_wiz_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2545.113 ; gain = 0.000 ; free physical = 1342 ; free virtual = 12678
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2545.148 ; gain = 0.000 ; free physical = 1341 ; free virtual = 12678
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2545.148 ; gain = 679.773 ; free physical = 1344 ; free virtual = 12681
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35ticpg236-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2553.117 ; gain = 687.742 ; free physical = 1344 ; free virtual = 12681
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2553.117 ; gain = 687.742 ; free physical = 1344 ; free virtual = 12681
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2553.117 ; gain = 687.742 ; free physical = 1343 ; free virtual = 12680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2553.117 ; gain = 687.742 ; free physical = 1348 ; free virtual = 12685
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2645.117 ; gain = 779.742 ; free physical = 1227 ; free virtual = 12572
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2645.117 ; gain = 779.742 ; free physical = 1227 ; free virtual = 12572
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2655.141 ; gain = 789.766 ; free physical = 1219 ; free virtual = 12564
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2858.953 ; gain = 993.578 ; free physical = 1038 ; free virtual = 12383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2858.953 ; gain = 993.578 ; free physical = 1038 ; free virtual = 12383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2858.953 ; gain = 993.578 ; free physical = 1038 ; free virtual = 12383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2858.953 ; gain = 993.578 ; free physical = 1038 ; free virtual = 12383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2858.953 ; gain = 993.578 ; free physical = 1038 ; free virtual = 12383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2858.953 ; gain = 993.578 ; free physical = 1038 ; free virtual = 12383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |BUFG       |     2|
+|2     |MMCME2_ADV |     1|
+|3     |IBUF       |     1|
++------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2858.953 ; gain = 993.578 ; free physical = 1038 ; free virtual = 12383
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 2858.953 ; gain = 944.617 ; free physical = 1041 ; free virtual = 12386
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2858.961 ; gain = 993.578 ; free physical = 1041 ; free virtual = 12386
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2858.961 ; gain = 0.000 ; free physical = 1041 ; free virtual = 12386
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2858.961 ; gain = 0.000 ; free physical = 1192 ; free virtual = 12541
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 21952c32
+INFO: [Common 17-83] Releasing license: Vivado_Synthesis
+30 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:22 . Memory (MB): peak = 2858.988 ; gain = 1135.793 ; free physical = 1192 ; free virtual = 12541
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1906.808; main = 1906.808; forked = 273.901
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3591.711; main = 2858.957; forked = 1046.594
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2882.965 ; gain = 0.000 ; free physical = 1192 ; free virtual = 12541
+INFO: [Common 17-1381] The checkpoint '/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.runs/vga_ctrl_block_clk_wiz_0_0_synth_1/vga_ctrl_block_clk_wiz_0_0.dcp' has been generated.
+INFO: [Ipptcl 7-1612] Added synthesis output to IP cache for IP vga_ctrl_block_clk_wiz_0_0, cache-ID = 498f82240a376b6e
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2882.965 ; gain = 0.000 ; free physical = 1198 ; free virtual = 12547
+INFO: [Common 17-1381] The checkpoint '/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.runs/vga_ctrl_block_clk_wiz_0_0_synth_1/vga_ctrl_block_clk_wiz_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file vga_ctrl_block_clk_wiz_0_0_utilization_synth.rpt -pb vga_ctrl_block_clk_wiz_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Jul 10 10:27:16 2026...
