@@ -1,70 +1,88 @@
 `timescale 1ns / 1ps
 
 module vga_top #(
-
-    parameter int color_w = 4,                              // Numărul de biți pentru canalele R,G,B (determina nr max de culori reprezentabile)
-    parameter logic [color_w-1:0] image_red   = 4'h0,       // Valoarea pentru canalul roșu al culorii de test
-    parameter logic [color_w-1:0] image_green = 4'hF,       // Valoarea pentru canalul verde al culorii de test
-    parameter logic [color_w-1:0] image_blue  = 4'hD        // Valoarea pentru canalul albastru al culorii de test
-
+    parameter int color_w = 4,  // Color depth (lungimea în biți pentru un canal R/G/B)
+    
+    // Culoare fundal
+    parameter logic [color_w-1:0] bg_red   = 4'h2,
+    parameter logic [color_w-1:0] bg_green = 4'h2,
+    parameter logic [color_w-1:0] bg_blue  = 4'h2
 )(
-
-    input  logic clk_100MHz,                                // Ceasul setat din constrângeri (100 MHz)
-    input  logic btnC,                                      // activ pe 1 (butonul de pe placa)
-
-    output logic hsync,                                     // Semnal de sincronizare pentru desenare pe orizontală (propagat din vga_driver)
-    output logic vsync,                                     // Semnal de sincronizare pentru desenare pe verticală (propagat din vga_driver)
-
-    output logic rst_led,                                   // LED de pe placa (pinul U16), aprins cat timp butonul de reset e apasat
-
-    output logic [color_w-1:0] vga_red,                     // Semnal de ieșire: canalul roșu (propagat din vga_driver)
-    output logic [color_w-1:0] vga_green,                   // Semnal de ieșire: canalul verde (propagat din vga_driver)
-    output logic [color_w-1:0] vga_blue                     // Semnal de ieșire: canalul albastru (propagat din vga_driver)
-
+    input  logic clk_100MHz,                // Ceas sistem
+    input  logic btnC,                      // Buton reset
+    
+    output logic hsync,                     // Semnal de sincronizare orizontală 
+    output logic vsync,                     // Semnal de sincronizare verticală 
+    output logic rst_led,                   // LED pentru reset
+    
+    output logic [color_w-1:0] vga_red,     // Canal VGA pentru roșu
+    output logic [color_w-1:0] vga_green,   // Canal VGA pentru verde
+    output logic [color_w-1:0] vga_blue     // Canal VGA pentru albastru
 );
 
-    // =========================================================================
-    // ceas de pixel generat din clocking wizard (mmcm/pll)
-    // =========================================================================
+    logic reset;
+    assign rst_led = reset;
+    assign reset   = btnC;
 
-    logic reset;                                            // Semnalul de reset intern, activ pe 1 (aceeasi polaritate ca btnC)
+    logic pix_clk;
 
-    assign rst_led = reset;                                 // LED-ul urmareste direct starea reset-ului: aprins cat timp reset=1 (buton apasat)
-    assign reset   = btnC;                                  // Reset-ul preia direct starea butonului de pe placa, fara procesare suplimentara
-
-    logic pix_clk;                                          // Ceasul de pixel, generat din clk_100MHz prin clocking wizard (mmcm/pll)
-
+    // Wizard-ul pentru ceas 
+    // Frecventa lucru: H_TOTAL * V_TOTAL * FPS
+    // Pentru 640x480p, 60 FPS: 800 * 525 * 60 =  25.175 MHz
     vga_ctrl_block_wrapper vga_ctrl_block_wrapper_i (
-
-        .clk_100MHz (clk_100MHz),                           // Intrare: ceasul de sistem al placii (100 MHz)
-        .clk_out1_0 (pix_clk),                              // Iesire: ceasul de pixel generat (folosit mai jos de vga_driver)
-        .reset_rtl_0(reset)                                 // Intrare: reset-ul wizard-ului, activ pe 1, acelasi semnal ca la buton
-
+        .clk_100MHz (clk_100MHz),
+        .clk_out1_0 (pix_clk),
+        .reset_rtl_0(reset)
     );
 
     // =========================================================================
-    // vga driver
+    // SEMNALE DE INTERCONECTARE ÎNTRE DRIVER ȘI RENDERER
     // =========================================================================
+    logic [9:0] current_x;
+    logic [9:0] current_y;
+    
+    logic [color_w-1:0] shape_red;
+    logic [color_w-1:0] shape_green;
+    logic [color_w-1:0] shape_blue;
 
+    // =========================================================================
+    // SHAPE RENDERER
+    // =========================================================================
+    shape_renderer #(
+        .color_w (color_w),
+        .bg_red  (bg_red),
+        .bg_green(bg_green),
+        .bg_blue (bg_blue)
+    ) shape_renderer_i (
+        .h_pos    (current_x),   // Primește coordonata de la vga_driver
+        .v_pos    (current_y),   // Primește coordonata de la vga_driver
+        
+        .pix_red  (shape_red),   // Trimite culoarea calculată afară
+        .pix_green(shape_green),
+        .pix_blue (shape_blue)
+    );
+
+    // =========================================================================
+    // VGA DRIVER
+    // =========================================================================
     vga_driver #(
-
-        .color_w    (color_w),                              // Propaga latimea de biti per canal catre vga_driver
-        .image_red  (image_red),                            // Propaga valoarea canalului rosu al culorii de test
-        .image_green(image_green),                          // Propaga valoarea canalului verde al culorii de test
-        .image_blue (image_blue)                            // Propaga valoarea canalului albastru al culorii de test
-
+        .color_w (color_w)
     ) vga_driver_i (
+        .pix_clk  (pix_clk),
+        .rst_n    (~reset),
+        
+        .h_pos    (current_x),   // Trimite coordonata X către renderer
+        .v_pos    (current_y),   // Trimite coordonata Y către renderer
+        
+        .pix_red  (shape_red),   // Primește culoarea de la renderer
+        .pix_green(shape_green), // Primește culoarea de la renderer
+        .pix_blue (shape_blue),  // Primește culoarea de la renderer
 
-        .pix_clk  (pix_clk),                                // Conectat la ceasul de pixel generat mai sus
-        .rst_n    (~reset),                                 // Conectat la reset inversat: vga_driver asteapta rst_n activ pe 0, iar reset e activ pe 1
-
-        .hsync    (hsync),                                  // Iesirea de hsync a vga_driver e propagata direct catre portul de top
-        .vsync    (vsync),                                  // Iesirea de vsync a vga_driver e propagata direct catre portul de top
-
-        .vga_red  (vga_red),                                // Iesirea de culoare rosie a vga_driver e propagata direct catre portul de top
-        .vga_green(vga_green),                              // Iesirea de culoare verde a vga_driver e propagata direct catre portul de top
-        .vga_blue (vga_blue)                                // Iesirea de culoare albastra a vga_driver e propagata direct catre portul de top
-
+        .hsync    (hsync),
+        .vsync    (vsync),
+        .vga_red  (vga_red),
+        .vga_green(vga_green),
+        .vga_blue (vga_blue)
     );
 
 endmodule

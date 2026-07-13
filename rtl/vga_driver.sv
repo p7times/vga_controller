@@ -2,124 +2,110 @@
 
 module vga_driver #(
 
-    parameter int color_w                       = 4,            // Numărul de biți pentru canalele R,G,B (determina nr max de culori reprezentabile)
-
-    parameter logic [color_w-1:0] image_red     = '1,           // Valoarea pentru canalul roșu
-    parameter logic [color_w-1:0] image_green   = '0,           // Valoarea pentru canalul verde
-    parameter logic [color_w-1:0] image_blue    = '0            // Valoarea pentru canalul albastru
+    parameter int color_w = 4                                   // Numărul de biți pentru canalele R,G,B
 
 )(
 
-    input  logic                pix_clk,                        // Ceasul sistemului
+    input  logic                pix_clk,                        // Ceasul sistemului (25 MHz pentru 640x480)
     input  logic                rst_n,                          // Reset asincron, activ în 0
 
+    // --- INTERFAȚA CU RENDERER-UL ---
+    output logic [9:0]          h_pos,                          // Ieșire: coordonata X curentă către renderer
+    output logic [9:0]          v_pos,                          // Ieșire: coordonata Y curentă către renderer
+    input  logic [color_w-1:0]  pix_red,                        // Intrare: culoarea roșie calculată de renderer
+    input  logic [color_w-1:0]  pix_green,                      // Intrare: culoarea verde calculată de renderer
+    input  logic [color_w-1:0]  pix_blue,                       // Intrare: culoarea albastră calculată de renderer
+
+    // --- INTERFAȚA FIZICĂ VGA ---
     output logic                hsync,                          // Semnal de sincronizare pentru desenare pe orizontală
     output logic                vsync,                          // Semnal de sincronizare pentru desenare pe verticală
 
-    output logic [color_w-1:0]  vga_red,                        // Semnal de ieșire: canalul roșu
-    output logic [color_w-1:0]  vga_green,                      // Semnal de ieșire: canalul verde
-    output logic [color_w-1:0]  vga_blue                        // Semnal de ieșire: canalul albastru
+    output logic [color_w-1:0]  vga_red,                        // Semnal de ieșire fizic: canalul roșu
+    output logic [color_w-1:0]  vga_green,                      // Semnal de ieșire fizic: canalul verde
+    output logic [color_w-1:0]  vga_blue                        // Semnal de ieșire fizic: canalul albastru
 
 );
 
     // =========================================================================
-    // PARAMETRI DE TIMING VGA PENTRU REZOLUȚIA 640x480
+    // PARAMETRI DE TIMING VGA PENTRU SETARE REZOLUȚIE 640x480 @ 60Hz
     // =========================================================================
 
-    localparam int h_active = 640;                              // Nr de pixeli vizibili pe o linie (ce se vede efectiv pe ecran, pe orizontală)
-    localparam int h_fp     = 16;                               // Front porch orizontal: pauza dintre sfârșitul liniei vizibile și începutul pulsului de h-sync
-    localparam int h_sync   = 96;                               // Durata (în pixeli) cât h-sync stă în starea activă (pulsul propriu-zis de sincronizare orizontală) 
-    localparam int h_bp     = 48;                               // Back porch orizontal: pauza dintre sfârșitul pulsului de h-sync și începutul liniei vizibile următoare
-    localparam int h_total  = h_active + h_fp + h_sync + h_bp;  // Nr total de pixeli pe o linie completă (vizibil + toate pauzele), adică perioada orizontală
+    localparam int h_bp     = 48;                               // Back porch orizontal
+    localparam int h_active = 640;                              // Nr de pixeli vizibili pe o linie
+    localparam int h_fp     = 16;                               // Front porch orizontal
+    localparam int h_sync   = 96;                               // Durata pulsului de sincronizare orizontală    
 
-    localparam int v_active = 480;                              // Nr de linii vizibile într-un cadru (ce se vede efectiv pe ecran, pe verticală)
-    localparam int v_fp     = 10;                               // Front porch vertical: pauza (în linii) dintre ultima linie vizibilă și pulsul de v-sync
-    localparam int v_sync   = 2;                                // Durata (în linii) cât v-sync stă în starea activă (pulsul de sincronizare verticală)
-    localparam int v_bp     = 33;                               // Back porch vertical: pauza (în linii) dintre pulsul de v-sync și prima linie vizibilă a cadrului următor
-    localparam int v_total  = v_active + v_fp + v_sync + v_bp;  // Nr total de linii dintr-un cadru complet (vizibil + toate pauzele), adică perioada verticală
+    localparam int v_bp     = 33;                               // Back porch vertical
+    localparam int v_active = 480;                              // Nr de linii vizibile într-un cadru
+    localparam int v_fp     = 10;                               // Front porch vertical
+    localparam int v_sync   = 2;                                // Durata pulsului de sincronizare verticală
+    
+    localparam int h_total  = h_active + h_fp + h_sync + h_bp;  // Perioada orizontală totală
+    localparam int v_total  = v_active + v_fp + v_sync + v_bp;  // Perioada verticală totală
  
-    localparam logic h_pol = 1'b0;                              // Polaritatea hsync: 0 = sincronizare activă pe nivel logic 0 (negativă), standard pentru 640x480@60Hz
-    localparam logic v_pol = 1'b0;                              // Polaritatea vsync: 0 = sincronizare activă pe nivel logic 0 (negativă), standard pentru 640x480@60Hz
+    localparam logic h_pol = 1'b0;                              // Polaritatea hsync (negativă)
+    localparam logic v_pol = 1'b0;                              // Polaritatea vsync (negativă)
 
 
     // =========================================================================
     // NUMĂRĂTORI POZIȚIE PIXEL / LINIE
     // =========================================================================
 
-    logic [$clog2(h_total)-1:0] h_cnt;                          // Numărătorul de poziție pe orizontală (indexul pixelului curent în cadrul liniei, 0 .. h_total-1)
-    logic [$clog2(v_total)-1:0] v_cnt;                          // Numărătorul de poziție pe verticală (indexul liniei curente în cadrul întregului cadru, 0 .. v_total-1)
+    logic [$clog2(h_total)-1:0] h_cnt;                          
+    logic [$clog2(v_total)-1:0] v_cnt;                          
  
-    always_ff @(posedge pix_clk or negedge rst_n) begin         // Bloc secvențial: se declanșează fie la fiecare front crescător de ceas, fie imediat (asincron) la căderea lui rst_n
+    always_ff @(posedge pix_clk or negedge rst_n) begin         
  
         if (!rst_n) begin                                   
-        
-            // Cât timp reset-ul e activ (rst_n = 0), numărătoarele orizontale și verticale se pun pe 0
             h_cnt <= '0;     
             v_cnt <= '0;       
- 
         end else begin           
-        
-            // În funcționare normală:
-            if (h_cnt == h_total - 1) begin                     // Dacă am ajuns la ultimul pixel din linia curentă...
- 
-                h_cnt <= '0;                                    // ...reîncepem linia de la pixelul 0
- 
-                if (v_cnt == v_total - 1)                       // Dacă, în plus, era și ultima linie din cadru...
-                    v_cnt <= '0;                                // ...reîncepem cadrul de la linia 0 (s-a terminat un cadru complet)
+            if (h_cnt == h_total - 1) begin                     
+                h_cnt <= '0;                                    
+                if (v_cnt == v_total - 1)                       
+                    v_cnt <= '0;                                
                 else
-                    v_cnt <= v_cnt + 1'b1;                      // ...altfel trecem pur și simplu la linia următoare
- 
-            end else
-                h_cnt <= h_cnt + 1'b1;                          // Dacă nu suntem la finalul liniei, trecem la pixelul următor de pe linia curentă
- 
+                    v_cnt <= v_cnt + 1'b1;                      
+            end else begin
+                h_cnt <= h_cnt + 1'b1;                          
+            end
         end
  
     end
 
+    // =========================================================================
+    // CONECTARE COORDONATE CĂTRE EXTERIOR (RENDERER)
+    // =========================================================================
+    
+    // Convertim contoarele interne la 10 biți pentru a acoperi maxim 1023
+    assign h_pos = 10'(h_cnt);
+    assign v_pos = 10'(v_cnt);
 
     // =========================================================================
     // DECODARE ZONE: ACTIV, H-SYNC, V-SYNC
     // =========================================================================
 
-    logic h_sync_area;                                          // 1 cât timp pixelul curent se află în fereastra de puls hsync (pe orizontală)
-    logic v_sync_area;                                          // 1 cât timp linia curentă se află în fereastra de puls vsync (pe verticală)
-    logic active;                                               // 1 cât timp poziția curentă (h_cnt, v_cnt) e în zona vizibilă a ecranului
+    logic h_sync_area;                                          
+    logic v_sync_area;                                          
+    logic active;                                               
 
-    // h_sync_area e 1 exact după zona vizibilă și front porch, cât durează pulsul de sincronizare orizontală
     assign h_sync_area = (h_cnt >= h_active + h_fp) && (h_cnt <  h_active + h_fp + h_sync);
-    
-    // v_sync_area e 1 exact după zona vizibilă și front porch, cât durează pulsul de sincronizare verticală
     assign v_sync_area = (v_cnt >= v_active + v_fp) && (v_cnt <  v_active + v_fp + v_sync);
-
-    // active e 1 doar dacă atât poziția orizontală, cât și cea verticală, sunt în interiorul zonei vizibile (640x480) - aici se desenează efectiv imaginea
-    assign active = (h_cnt < h_active) && (v_cnt < v_active);
-
+    assign active      = (h_cnt < h_active) && (v_cnt < v_active);
 
     // =========================================================================
     // SINCRONIZĂRI
     // =========================================================================
 
-    // Cât timp suntem în fereastra de sync orizontal, h-sync ia valoarea polarității active (h_pol); altfel ia valoarea opusă (starea de repaus/inactivă)
     assign hsync = h_sync_area ? h_pol : ~h_pol;
-    
-    // Cât timp suntem în fereastra de sync vertical, v-sync ia valoarea polarității active (v_pol); altfel ia valoarea opusă (starea de repaus/inactivă)
     assign vsync = v_sync_area ? v_pol : ~v_pol;
     
-    
     // =========================================================================
-    // CULOARE: doar in zona activa, negru in rest (blanking)
+    // CULOARE FIZICĂ: folosește culorile calculate de renderer, blanking în rest
     // =========================================================================
     
-    // Canalul roșu iese cu valoarea parametrului image_red DOAR dacă nu suntem în reset ȘI suntem în zona vizibilă; altfel iese 0 (negru, blanking)
-    assign vga_red   = (rst_n && active) ? image_red   : '0;
+    assign vga_red   = (rst_n && active) ? pix_red   : '0;
+    assign vga_green = (rst_n && active) ? pix_green : '0;
+    assign vga_blue  = (rst_n && active) ? pix_blue  : '0;
     
-    // Canalul verde iese cu valoarea parametrului image_green DOAR dacă nu suntem în reset ȘI suntem în zona vizibilă; altfel iese 0 (negru, blanking)
-    assign vga_green = (rst_n && active) ? image_green : '0;
-    
-    // Canalul albastru iese cu valoarea parametrului image_blue DOAR dacă nu suntem în reset ȘI suntem în zona vizibilă; altfel iese 0 (negru, blanking)
-    assign vga_blue  = (rst_n && active) ? image_blue  : '0;
-    
-    // Condiția "rst_n &&" e obligatorie aici: h_cnt=v_cnt=0 (starea imediat după reset) cade în interiorul zonei active,
-    // deci fără acest && am scoate culoarea de test chiar și în timpul reset-ului (bug găsit și corectat anterior)
-
 endmodule
