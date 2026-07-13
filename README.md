@@ -2,16 +2,25 @@
 
 **Autor:** Brașoveanu Petru-Andrei
 
+### Istoric revizii
+
+| Versiune | Modificări |
+|---|---|
+| 1.0. | Controller VGA funcțional, testbench pentru validare |
+| 1.1. | LED pentru reset și setare culoare personalizată|
+| 1.2. | Afișare forme geometrice statice pe monitor |
+
 ---
 
 ## Cuprins
 - [VGA Controller](#vga-controller)
+    - [Istoric revizii](#istoric-revizii)
   - [Cuprins](#cuprins)
   - [1. Introducere](#1-introducere)
   - [2. Obiective](#2-obiective)
     - [2.1. Obiective proiect](#21-obiective-proiect)
     - [2.2. Obiective personalizate](#22-obiective-personalizate)
-  - [3. Etape](#3-etape)
+  - [3. Versiunea 1.0.](#3-versiunea-10)
     - [3.1. Specificații](#31-specificații)
       - [3.1.1. Obiectiv](#311-obiectiv)
       - [3.1.2. Realizare](#312-realizare)
@@ -27,22 +36,20 @@
       - [3.3.2. Realizare](#332-realizare)
       - [3.3.3. Dificultăți](#333-dificultăți)
       - [3.3.4. Mod de rezolvare](#334-mod-de-rezolvare)
-    - [3.4. Extindere: LED de stare reset și culoare personalizată](#34-extindere-led-de-stare-reset-și-culoare-personalizată)
-      - [3.4.1. Obiectiv](#341-obiectiv)
-      - [3.4.2. Realizare](#342-realizare)
-      - [3.4.3. Dificultăți](#343-dificultăți)
-      - [3.4.4. Mod de rezolvare](#344-mod-de-rezolvare)
-    - [3.5. Etape următoare (planificate)](#35-etape-următoare-planificate)
-      - [3.5.1. Obiectiv](#351-obiectiv)
-      - [3.5.2. Realizare](#352-realizare)
-      - [3.5.3. Dificultăți](#353-dificultăți)
-      - [3.5.4. Mod de rezolvare](#354-mod-de-rezolvare)
+  - [4. Versiunea 1.1: LED de stare reset și culoare personalizată](#4-versiunea-11-led-de-stare-reset-și-culoare-personalizată)
+    - [4.1. Obiectiv](#41-obiectiv)
+    - [4.2. Realizare](#42-realizare)
+    - [4.3. Dificultăți](#43-dificultăți)
+    - [4.4. Mod de rezolvare](#44-mod-de-rezolvare)
+  - [5. Versiunea 1.2: Afișare forme geometrice](#5-versiunea-12-afișare-forme-geometrice)
+    - [5.1. Obiectiv](#51-obiectiv)
+    - [5.2. Realizare](#52-realizare)
+    - [5.3. Dificultăți](#53-dificultăți)
+    - [5.4. Mod de rezolvare](#54-mod-de-rezolvare)
 
 ---
 
 ## 1. Introducere
-
-**Revizie:** 1.0. - afișarea unei culori solide pe monitor
 
 Acest proiect urmărește conceperea unui controller VGA pentru un FPGA, capabil inițial să afișeze o culoare solidă pe monitor, urmând ca ulterior să afișeze o formă geometrică (funcție de decizii care vor fi luate pe parcurs, la implementare).
 
@@ -52,6 +59,7 @@ Acest proiect urmărește conceperea unui controller VGA pentru un FPGA, capabil
 
 | Modul | Rol |
 |---|---|
+| `shape_renderer` | Modul de desenare manuală dreptunghi și cerc |
 | `vga_driver` | Generator de timing VGA (numărători, sincronizări, blanking) + ieșire culoare |
 | `vga_top` | Top-level pentru placă: instanțiază generatorul de ceas și `vga_driver`, gestionează reset-ul și LED-ul de stare |
 | `vga_ctrl_block_wrapper` / `vga_ctrl_block` | Clocking wizard (MMCM), generează `pix_clk` din `clk_100MHz` |
@@ -71,7 +79,7 @@ Cerința de bază a proiectului: proiectarea unui controller VGA funcțional pen
 
 ---
 
-## 3. Etape
+## 3. Versiunea 1.0.
 
 ### 3.1. Specificații
 
@@ -179,20 +187,20 @@ S-au scris constrângerile (`.xdc`) pentru Basys 3: ceas pe `W5`, buton de reset
 
 ---
 
-### 3.4. Extindere: LED de stare reset și culoare personalizată
+## 4. Versiunea 1.1: LED de stare reset și culoare personalizată
 
-#### 3.4.1. Obiectiv
+### 4.1. Obiectiv
 Adăugarea unui LED pe placă care indică vizual starea de reset (aprins cât timp butonul e apăsat), și configurarea unei culori de test personalizate în locul culorii solide inițiale (roșu pur).
 
-#### 3.4.2. Realizare
+### 4.2. Realizare
 - S-a adăugat portul `rst_led` la `vga_top`, conectat direct la semnalul de reset: `assign rst_led = reset;`.
 - S-a adăugat constrângerea pentru LED în `.xdc`, pe pinul `U16` (`LED[0]` pe Basys 3), verificat contra fișierului master `.xdc` oficial de la Digilent.
 - S-a înlocuit culoarea implicită de test (`image_red=4'hF, image_green=4'h0, image_blue=4'h0` — roșu pur) cu o culoare personalizată, derivată dintr-un cod hex web `#00FFDA` (turcoaz).
 
-#### 3.4.3. Dificultăți
+### 4.3. Dificultăți
 Modulul folosește 4 biți per canal de culoare (`color_w=4`), adică doar 16 nivele posibile per canal, față de cele 256 dintr-un cod hex web standard (8 biți per canal). Conversia unui cod hex arbitrar la 4 biți nu poate fi exactă în general.
 
-#### 3.4.4. Mod de rezolvare
+### 4.4. Mod de rezolvare
 Conversia s-a făcut prin trunchierea fiecărui canal de la 8 la 4 biți (`valoare_4bit = valoare_8bit >> 4`, echivalent cu împărțire la 16, rotunjită în jos):
 
 - R: `0x00 >> 4 = 0x0`
@@ -209,16 +217,49 @@ Rezultatul afișat pe monitor corespunde culorii 8-bit `#00FFDD` (221 în loc de
 
 ---
 
-### 3.5. Etape următoare (planificate)
+## 5. Versiunea 1.2: Afișare forme geometrice
+ 
+### 5.1. Obiectiv
+Proiectarea unui modul separat, strict dedicat logicii de desen, capabil să afișeze un dreptunghi și un cerc (nu doar o culoare solidă), parametrizabil, și integrarea lui în `vga_top`.
+ 
+### 5.2. Realizare
+S-a creat modulul `shape_renderer`, complet independent de timing-ul VGA:
+ 
+- primește coordonatele pixelului curent (`h_pos`, `v_pos`);
+- decide combinațional dacă pixelul se află în interiorul unui dreptunghi (`rect_x`, `rect_y`, `rect_w`, `rect_h`) și/sau al unui cerc (`circle_cx`, `circle_cy`, `circle_r`), fiecare cu propria culoare și flag de activare (`rect_enable`, `circle_enable`);
+- pentru dreptunghi, testul e o simplă încadrare în interval: `h_pos ∈ [rect_x, rect_x+rect_w)` și `v_pos ∈ [rect_y, rect_y+rect_h)`;
+- pentru cerc, testul e pe distanța la pătrat față de centru: `(h_pos-cx)² + (v_pos-cy)² <= r²`, ca să se evite o rădăcină pătrată în hardware;
+- dacă cele două forme se suprapun, cercul are prioritate (se "vede deasupra" dreptunghiului); în rest, se afișează culoarea de fundal (`bg_red/green/blue`).
+Pentru a face loc acestui modul, `vga_driver` a fost **modificat**: nu mai primește o culoare fixă prin parametri (`image_red/green/blue`), ci expune coordonatele curente către exterior (`h_pos`, `v_pos`, 10 biți fiecare) și primește înapoi culoarea calculată (`pix_red/green/blue`) de la orice modul extern îi e conectat. Practic, `vga_driver` a devenit strict un generator de timing + blanking, indiferent de ce se desenează.
+ 
+`vga_top` a fost actualizat să instanțieze ambele module și să le conecteze printr-o pereche de semnale intermediare (`current_x`/`current_y` pentru coordonate, `shape_red/green/blue` pentru culoare) — fără nicio buclă de ceas între ele, e o simplă propagare combinațională într-un singur sens logic (coordonate → culoare), chiar dacă fizic semnalele circulă prin ambele module.
+ 
+### 5.3. Dificultăți
+- **Nepotrivire de lățime pe `v_pos`:** `vga_driver` expune `h_pos`/`v_pos` cu lățime fixă de 10 biți (`[9:0]`), în timp ce portul `v_pos` al lui `shape_renderer` e parametrizat la `$clog2(v_active)` biți — pentru `v_active=480`, asta înseamnă **9 biți**, nu 10. Conectarea unui semnal de 10 biți la un port de 9 biți generează un warning de sinteză (width mismatch), chiar dacă rezultatul rămâne corect (valorile lui `v_cnt` sunt oricum sub 480 în zona activă, deci încap în 9 biți fără pierdere).
+- Calculul de distanță pentru cerc (`dx*dx + dy*dy`) introduce o înmulțire în hardware, spre deosebire de testul de dreptunghi, care e doar comparații. Sinteza a mapat aceste înmulțiri pe blocuri DSP dedicate ale FPGA-ului (vizibil în utilizarea de resurse: `DSP = 2`, absent înainte de această extindere).
+- Timpul de proiectare a crescut ușor din cauza interfeței "bidirecționale" dintre `vga_driver` și `shape_renderer` (unul expune coordonate, celălalt primește culoare înapoi) — deși nu e o buclă combinațională reală (nu există dependență circulară: coordonatele nu depind de culoare), denumirea/structura poate fi confundată la prima vedere cu un feedback loop.
 
-#### 3.5.1. Obiectiv
-Extinderea proiectului de la afișarea unei culori solide la afișarea unei forme geometrice pe monitor.
+### 5.4. Mod de rezolvare
+- Nepotrivirea de lățime pe `v_pos` a fost acceptată ca inofensivă funcțional (valorile rămân mereu în intervalul reprezentabil pe 9 biți), dar rămâne documentată ca aspect de curățat ulterior — fie prin declararea lui `current_y` pe 9 biți în `vga_top`, fie prin lățirea portului `v_pos` al lui `shape_renderer` la 10 biți fix, pentru consistență.
+- Utilizarea de blocuri DSP pentru calculul cercului a fost acceptată ca un compromis normal: bugetul de resurse al FPGA-ului (Artix-7 pe Basys 3) are suficiente DSP-uri disponibile (utilizare finală: doar 2.22%), deci nu reprezintă un risc de epuizare a resurselor.
+- Separarea strictă a responsabilităților (timing în `vga_driver`, desen în `shape_renderer`) a fost menținută ca decizie de design, chiar cu costul unei interfețe puțin mai complexe în `vga_top`, pentru că permite testarea/extinderea independentă a logicii de desen (adăugarea de forme noi nu mai necesită modificarea `vga_driver`).
 
-#### 3.5.2. Realizare
-*(neînceput — decizie ce va fi luată ulterior, în funcție de constrângerile de la fața locului)*
+**Utilizare resurse:**
+ 
+| Resursă | Utilizare | Procent (%) |
+|---|---|---|
+| LUT | 55 | 0.26 |
+| FF | 20 | 0.05 |
+| DSP | 2 | 2.22 |
+| IO | 17 | 16.04 |
+| BUFG | 2 | 6.25 |
+| MMCM | 1 | 20 |
+ 
+**Timing closure:**
+ 
+| Setup | Hold | Pulse Width |
+|---|---|---|
+| WNS = 36.027 ns | WHS = 0.09 ns | WPWS = 3.0 ns |
+ 
+---
 
-#### 3.5.3. Dificultăți
-*(de completat)*
-
-#### 3.5.4. Mod de rezolvare
-*(de completat)*
