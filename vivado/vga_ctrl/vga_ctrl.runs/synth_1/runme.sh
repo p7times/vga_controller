@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.runs/synth_1'
+HD_PWD='/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.runs/synth_1/vga_top.tcl"
+  variable script "/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.runs/synth_1/vga_top.tcl"
   variable category "vivado_synth"
 }
 
@@ -56,9 +56,13 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 3
 set_param xicom.use_bs_reader 1
 set_param general.usePosixSpawnForFork 1
+set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35ticpg236-1L
 
@@ -66,25 +70,34 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.cache/wt [current_project]
-set_property parent.project_path /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.xpr [current_project]
+set_property webtalk.parent_dir /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.cache/wt [current_project]
+set_property parent.project_path /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.xpr [current_project]
 set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.cache/ip [current_project]
+set_property ip_output_repo /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib -sv {
-  /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/rtl/vga_driver.sv
-  /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/rtl/vga_top.sv
+read_verilog -library xil_defaultlib -sv /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/vga_top.v
+read_verilog -library xil_defaultlib {
+  /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/bounding_box.v
+  /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/calc_corner.v
+  /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/fps_counter.v
+  /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/memory/framebuffer.v
+  /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/memory/framebuffer_dbl.v
+  /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/rasterizer.v
+  /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/shape_renderer.v
+  /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/triangle_controller.v
+  /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/hdl/vga_ctrl_block_wrapper.v
+  /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/vga_driver.v
+  /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/vga_fb_interface.v
 }
-read_verilog -library xil_defaultlib /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/hdl/vga_ctrl_block_wrapper.v
-add_files /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/sources_1/bd/vga_ctrl_block/vga_ctrl_block.bd
-set_property used_in_implementation false [get_files -all /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/vga_ctrl_block_ooc.xdc]
+add_files /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.srcs/sources_1/bd/vga_ctrl_block/vga_ctrl_block.bd
+set_property used_in_implementation false [get_files -all /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/vga_ctrl_block_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -95,8 +108,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc
-set_property used_in_implementation false [get_files /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc]
+read_xdc /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc
+set_property used_in_implementation false [get_files /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

@@ -1,0 +1,12 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/shape_renderer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shape_renderer
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/triangle_controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module triangle_controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/hdl/vga_ctrl_block_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_ctrl_block_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/vga_driver.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_driver
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/vga_fb_interface.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_fb_interface
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/sim/tb_vga_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_vga_top

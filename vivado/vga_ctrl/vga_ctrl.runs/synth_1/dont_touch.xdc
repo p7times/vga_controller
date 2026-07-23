@@ -9,4 +9,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==vga_ctrl_bl
 # IP: bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==vga_ctrl_block_clk_wiz_0_0 || ORIG_REF_NAME==vga_ctrl_block_clk_wiz_0_0} -quiet] -quiet
 
-# XDC: /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/vga_ctrl_block_ooc.xdc
+# XDC: /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/vga_ctrl_block_ooc.xdc

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2026.1 (lin64) Build 6511674 Tue Jun 16 11:01:26 MDT 2026
-| Date         : Fri Jul 10 11:54:02 2026
+| Date         : Thu Jul 23 19:39:50 2026
 | Host         : nemesiseanu running 64-bit Linux Mint 22.3
 | Command      : report_drc -file vga_top_drc_opted.rpt -pb vga_top_drc_opted.pb -rpx vga_top_drc_opted.rpx
 | Design       : vga_top
@@ -24,12 +24,16 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 1
-+----------+----------+-----------------------------------------------------+--------+
-| Rule     | Severity | Description                                         | Checks |
-+----------+----------+-----------------------------------------------------+--------+
-| CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1      |
-+----------+----------+-----------------------------------------------------+--------+
+             Checks found: 28
++-----------+----------+-----------------------------------------------------+--------+
+| Rule      | Severity | Description                                         | Checks |
++-----------+----------+-----------------------------------------------------+--------+
+| CFGBVS-1  | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1      |
+| CHECK-3   | Warning  | Report rule limit reached                           | 1      |
+| DPIP-1    | Warning  | Input pipelining                                    | 4      |
+| DPOP-2    | Warning  | MREG Output pipelining                              | 2      |
+| REQP-1839 | Warning  | RAMB36 async control check                          | 20     |
++-----------+----------+-----------------------------------------------------+--------+
 
 2. REPORT DETAILS
 -----------------
@@ -44,6 +48,141 @@ Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_des
  #where value2 is the voltage provided to configuration bank 0
 
 Refer to the device configuration user guide for more information.
+Related violations: <none>
+
+CHECK-3#1 Warning
+Report rule limit reached  
+REQP-1839 rule limit reached: 20 violations have been found.
+Related violations: <none>
+
+DPIP-1#1 Warning
+Input pipelining  
+DSP shape_renderer_i/u_rasterizer/setup_unit/prod10 input shape_renderer_i/u_rasterizer/setup_unit/prod10/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#2 Warning
+Input pipelining  
+DSP shape_renderer_i/u_rasterizer/setup_unit/prod10 input shape_renderer_i/u_rasterizer/setup_unit/prod10/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#3 Warning
+Input pipelining  
+DSP shape_renderer_i/u_rasterizer/setup_unit/prod20 input shape_renderer_i/u_rasterizer/setup_unit/prod20/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#4 Warning
+Input pipelining  
+DSP shape_renderer_i/u_rasterizer/setup_unit/prod20 input shape_renderer_i/u_rasterizer/setup_unit/prod20/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPOP-2#1 Warning
+MREG Output pipelining  
+DSP shape_renderer_i/u_rasterizer/setup_unit/prod10 multiplier stage shape_renderer_i/u_rasterizer/setup_unit/prod10/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#2 Warning
+MREG Output pipelining  
+DSP shape_renderer_i/u_rasterizer/setup_unit/prod20 multiplier stage shape_renderer_i/u_rasterizer/setup_unit/prod20/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+REQP-1839#1 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[14] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[14]) which is driven by a register (shape_renderer_i/u_fb/u_fb0/clear_addr_reg[14]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#2 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[14] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[14]) which is driven by a register (shape_renderer_i/u_fb/u_fb0/state_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#3 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[14] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[14]) which is driven by a register (shape_renderer_i/u_rasterizer/fb_x_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#4 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[14] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[14]) which is driven by a register (shape_renderer_i/u_rasterizer/fb_x_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#5 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[14] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[14]) which is driven by a register (shape_renderer_i/u_rasterizer/fb_x_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#6 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[14] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[14]) which is driven by a register (shape_renderer_i/u_rasterizer/fb_y_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#7 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[14] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[14]) which is driven by a register (shape_renderer_i/u_rasterizer/fb_y_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#8 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[15] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[15]) which is driven by a register (shape_renderer_i/u_fb/u_fb0/clear_addr_reg[15]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#9 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[15] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[15]) which is driven by a register (shape_renderer_i/u_fb/u_fb0/state_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#10 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[15] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[15]) which is driven by a register (shape_renderer_i/u_rasterizer/fb_x_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#11 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[15] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[15]) which is driven by a register (shape_renderer_i/u_rasterizer/fb_x_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#12 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[15] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[15]) which is driven by a register (shape_renderer_i/u_rasterizer/fb_x_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#13 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[15] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[15]) which is driven by a register (shape_renderer_i/u_rasterizer/fb_y_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#14 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[15] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[15]) which is driven by a register (shape_renderer_i/u_rasterizer/fb_y_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#15 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[15] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[15]) which is driven by a register (shape_renderer_i/u_rasterizer/fb_y_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#16 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[15] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[15]) which is driven by a register (shape_renderer_i/u_rasterizer/fb_y_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#17 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[15] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[15]) which is driven by a register (shape_renderer_i/u_rasterizer/fb_y_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#18 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[15] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[15]) which is driven by a register (shape_renderer_i/u_rasterizer/fb_y_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#19 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[15] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[15]) which is driven by a register (shape_renderer_i/u_rasterizer/fb_y_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#20 Warning
+RAMB36 async control check  
+The RAMB36E1 shape_renderer_i/u_fb/u_fb0/mem_reg_0_0 has an input control pin shape_renderer_i/u_fb/u_fb0/mem_reg_0_0/ADDRARDADDR[15] (net: shape_renderer_i/u_fb/u_fb0/port_b_addr[15]) which is driven by a register (shape_renderer_i/u_rasterizer/fb_y_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 

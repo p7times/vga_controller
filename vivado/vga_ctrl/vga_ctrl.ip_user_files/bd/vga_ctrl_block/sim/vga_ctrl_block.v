@@ -2,7 +2,7 @@
 //Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2026.1 (lin64) Build 6511674 Tue Jun 16 11:01:26 MDT 2026
-//Date        : Fri Jul 10 09:58:07 2026
+//Date        : Fri Jul 10 10:26:45 2026
 //Host        : nemesiseanu running 64-bit Linux Mint 22.3
 //Command     : generate_target vga_ctrl_block.bd
 //Design      : vga_ctrl_block

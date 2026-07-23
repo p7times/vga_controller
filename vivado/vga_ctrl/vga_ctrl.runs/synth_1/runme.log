@@ -8,30 +8,30 @@ INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detect
 # SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
 # IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
 # SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
-# Start of session at: Fri Jul 10 11:53:15 2026
-# Process ID         : 109441
-# Current directory  : /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.runs/synth_1
+# Start of session at: Thu Jul 23 19:38:43 2026
+# Process ID         : 559124
+# Current directory  : /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.runs/synth_1
 # Command line       : vivado -log vga_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source vga_top.tcl
-# Log file           : /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.runs/synth_1/vga_top.vds
-# Journal file       : /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.runs/synth_1/vivado.jou
+# Log file           : /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.runs/synth_1/vga_top.vds
+# Journal file       : /home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.runs/synth_1/vivado.jou
 # Running On         : nemesiseanu
 # Platform           : Linuxmint
 # Operating System   : Linux Mint 22.3
 # Processor Detail   : Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz
-# CPU Frequency      : 4455.746 MHz
+# CPU Frequency      : 4598.231 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 16670 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 20965 MB
-# Available Virtual  : 14352 MB
+# Available Virtual  : 13578 MB
 #-----------------------------------------------------------
 
 ****** Vivado v2026.1 (64-bit)
   **** SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
   **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
   **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
-  **** Start of session at: Fri Jul 10 11:53:15 2026
+  **** Start of session at: Thu Jul 23 19:38:43 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -47,154 +47,187 @@ INFO: [Device 21-403] Loading part xc7a35ticpg236-1L
 INFO: [Designutils 20-5008] Incremental synthesis strategy default
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 109581
+INFO: [Synth 8-7075] Helper process launched with PID 559205
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2381.133 ; gain = 517.758 ; free physical = 1339 ; free virtual = 12427
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2380.742 ; gain = 515.398 ; free physical = 1210 ; free virtual = 11562
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'vga_top' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/rtl/vga_top.sv:3]
-INFO: [Synth 8-6157] synthesizing module 'vga_ctrl_block_wrapper' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/hdl/vga_ctrl_block_wrapper.v:13]
-INFO: [Synth 8-6157] synthesizing module 'vga_ctrl_block' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/synth/vga_ctrl_block.v:13]
-INFO: [Synth 8-6157] synthesizing module 'vga_ctrl_block_clk_wiz_0_0' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.runs/synth_1/.Xil/Vivado-109441-nemesiseanu/realtime/vga_ctrl_block_clk_wiz_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'vga_ctrl_block_clk_wiz_0_0' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.runs/synth_1/.Xil/Vivado-109441-nemesiseanu/realtime/vga_ctrl_block_clk_wiz_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'vga_ctrl_block' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/synth/vga_ctrl_block.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'vga_ctrl_block_wrapper' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/hdl/vga_ctrl_block_wrapper.v:13]
-INFO: [Synth 8-6157] synthesizing module 'vga_driver' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/rtl/vga_driver.sv:3]
-	Parameter color_w bound to: 32'sb00000000000000000000000000000100 
-	Parameter image_red bound to: 4'b0000 
-	Parameter image_green bound to: 4'b1111 
-	Parameter image_blue bound to: 4'b1101 
-INFO: [Synth 8-6155] done synthesizing module 'vga_driver' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/rtl/vga_driver.sv:3]
-INFO: [Synth 8-6155] done synthesizing module 'vga_top' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/rtl/vga_top.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'vga_top' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/vga_top.v:15]
+INFO: [Synth 8-6157] synthesizing module 'vga_ctrl_block_wrapper' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/hdl/vga_ctrl_block_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'vga_ctrl_block' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/synth/vga_ctrl_block.v:13]
+INFO: [Synth 8-6157] synthesizing module 'vga_ctrl_block_clk_wiz_0_0' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.runs/synth_1/.Xil/Vivado-559124-nemesiseanu/realtime/vga_ctrl_block_clk_wiz_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'vga_ctrl_block_clk_wiz_0_0' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.runs/synth_1/.Xil/Vivado-559124-nemesiseanu/realtime/vga_ctrl_block_clk_wiz_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'vga_ctrl_block' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/synth/vga_ctrl_block.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'vga_ctrl_block_wrapper' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/hdl/vga_ctrl_block_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'triangle_controller' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/triangle_controller.v:21]
+	Parameter H_ACTIVE bound to: 320 - type: integer 
+	Parameter V_ACTIVE bound to: 240 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'triangle_controller' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/triangle_controller.v:21]
+INFO: [Synth 8-6157] synthesizing module 'vga_driver' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/vga_driver.v:14]
+	Parameter COORD_BITS bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'vga_driver' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/vga_driver.v:14]
+INFO: [Synth 8-6157] synthesizing module 'shape_renderer' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/shape_renderer.v:16]
+	Parameter H_ACTIVE bound to: 320 - type: integer 
+	Parameter V_ACTIVE bound to: 240 - type: integer 
+	Parameter COLOR_BITS bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rasterizer' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/rasterizer.v:15]
+	Parameter SCREEN_W bound to: 320 - type: integer 
+	Parameter SCREEN_H bound to: 240 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'bounding_box' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/bounding_box.v:14]
+	Parameter SCREEN_W bound to: 320 - type: integer 
+	Parameter SCREEN_H bound to: 240 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'bounding_box' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/bounding_box.v:14]
+INFO: [Synth 8-6157] synthesizing module 'calc_corner' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/calc_corner.v:25]
+	Parameter SCREEN_W bound to: 320 - type: integer 
+	Parameter SCREEN_H bound to: 240 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/calc_corner.v:169]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/calc_corner.v:146]
+INFO: [Synth 8-6155] done synthesizing module 'calc_corner' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/calc_corner.v:25]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/rasterizer.v:149]
+INFO: [Synth 8-6155] done synthesizing module 'rasterizer' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/rasterizer.v:15]
+INFO: [Synth 8-6157] synthesizing module 'framebuffer_dbl' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/memory/framebuffer_dbl.v:14]
+	Parameter H_RES bound to: 320 - type: integer 
+	Parameter V_RES bound to: 240 - type: integer 
+	Parameter COLOR_BITS bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'framebuffer' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/memory/framebuffer.v:26]
+	Parameter H_RES bound to: 320 - type: integer 
+	Parameter V_RES bound to: 240 - type: integer 
+	Parameter COLOR_BITS bound to: 4 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/memory/framebuffer.v:105]
+INFO: [Synth 8-6155] done synthesizing module 'framebuffer' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/memory/framebuffer.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'framebuffer_dbl' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/memory/framebuffer_dbl.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'shape_renderer' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/rasterizer/shape_renderer.v:16]
+WARNING: [Synth 8-689] width (9) of port connection 'x0' does not match port width (10) of module 'shape_renderer' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/vga_top.v:129]
+WARNING: [Synth 8-689] width (8) of port connection 'y0' does not match port width (10) of module 'shape_renderer' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/vga_top.v:129]
+WARNING: [Synth 8-689] width (9) of port connection 'x1' does not match port width (10) of module 'shape_renderer' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/vga_top.v:130]
+WARNING: [Synth 8-689] width (8) of port connection 'y1' does not match port width (10) of module 'shape_renderer' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/vga_top.v:130]
+WARNING: [Synth 8-689] width (9) of port connection 'x2' does not match port width (10) of module 'shape_renderer' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/vga_top.v:131]
+WARNING: [Synth 8-689] width (8) of port connection 'y2' does not match port width (10) of module 'shape_renderer' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/vga_top.v:131]
+INFO: [Synth 8-6157] synthesizing module 'vga_fb_interface' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/vga_fb_interface.v:15]
+	Parameter COLOR_BITS bound to: 4 - type: integer 
+	Parameter H_RES_LOGIC bound to: 320 - type: integer 
+	Parameter V_RES_LOGIC bound to: 240 - type: integer 
+	Parameter H_RES bound to: 640 - type: integer 
+	Parameter V_RES bound to: 480 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'vga_fb_interface' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/vga_fb_interface.v:15]
+INFO: [Synth 8-6157] synthesizing module 'fps_counter' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/fps_counter.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'fps_counter' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/fps_counter.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'vga_top' (0#1) [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/vga_top.v:15]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2468.102 ; gain = 604.727 ; free physical = 1219 ; free virtual = 12308
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2476.711 ; gain = 611.367 ; free physical = 1466 ; free virtual = 11820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2482.945 ; gain = 619.570 ; free physical = 1219 ; free virtual = 12308
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2491.555 ; gain = 626.211 ; free physical = 1466 ; free virtual = 11819
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2482.945 ; gain = 619.570 ; free physical = 1219 ; free virtual = 12308
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2491.555 ; gain = 626.211 ; free physical = 1466 ; free virtual = 11819
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2482.945 ; gain = 0.000 ; free physical = 1219 ; free virtual = 12308
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2491.555 ; gain = 0.000 ; free physical = 1466 ; free virtual = 11819
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0_in_context.xdc] for cell 'vga_ctrl_block_wrapper_i/vga_ctrl_block_i/clk_wiz_0'
-Finished Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0_in_context.xdc] for cell 'vga_ctrl_block_wrapper_i/vga_ctrl_block_i/clk_wiz_0'
-Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc]
-WARNING: [Vivado 12-584] No ports matched 'LED[1]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:100]
-WARNING: [Vivado 12-584] No ports matched 'LED[1]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:101]
-WARNING: [Vivado 12-584] No ports matched 'LED[2]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:102]
-WARNING: [Vivado 12-584] No ports matched 'LED[2]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:103]
-WARNING: [Vivado 12-584] No ports matched 'LED[3]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:104]
-WARNING: [Vivado 12-584] No ports matched 'LED[3]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:105]
-WARNING: [Vivado 12-584] No ports matched 'LED[4]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:106]
-WARNING: [Vivado 12-584] No ports matched 'LED[4]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:107]
-WARNING: [Vivado 12-584] No ports matched 'LED[5]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:108]
-WARNING: [Vivado 12-584] No ports matched 'LED[5]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:109]
-WARNING: [Vivado 12-584] No ports matched 'LED[6]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:110]
-WARNING: [Vivado 12-584] No ports matched 'LED[6]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:111]
-WARNING: [Vivado 12-584] No ports matched 'LED[7]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:112]
-WARNING: [Vivado 12-584] No ports matched 'LED[7]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:113]
-WARNING: [Vivado 12-584] No ports matched 'LED[8]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:114]
-WARNING: [Vivado 12-584] No ports matched 'LED[8]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:115]
-WARNING: [Vivado 12-584] No ports matched 'LED[9]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:116]
-WARNING: [Vivado 12-584] No ports matched 'LED[9]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:117]
-WARNING: [Vivado 12-584] No ports matched 'LED[10]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:118]
-WARNING: [Vivado 12-584] No ports matched 'LED[10]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:119]
-WARNING: [Vivado 12-584] No ports matched 'LED[11]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:120]
-WARNING: [Vivado 12-584] No ports matched 'LED[11]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:121]
-WARNING: [Vivado 12-584] No ports matched 'LED[12]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:122]
-WARNING: [Vivado 12-584] No ports matched 'LED[12]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:123]
-WARNING: [Vivado 12-584] No ports matched 'LED[13]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:124]
-WARNING: [Vivado 12-584] No ports matched 'LED[13]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:125]
-WARNING: [Vivado 12-584] No ports matched 'LED[14]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:126]
-WARNING: [Vivado 12-584] No ports matched 'LED[14]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:127]
-WARNING: [Vivado 12-584] No ports matched 'LED[15]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:128]
-WARNING: [Vivado 12-584] No ports matched 'LED[15]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:129]
-WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:133]
-WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:134]
-WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:135]
-WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:136]
-WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:137]
-WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:138]
-WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:139]
-WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:140]
-WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:141]
-WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:142]
-WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:143]
-WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:144]
-WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:145]
-WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:146]
-WARNING: [Vivado 12-584] No ports matched 'dp'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:148]
-WARNING: [Vivado 12-584] No ports matched 'dp'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:149]
-WARNING: [Vivado 12-584] No ports matched 'an[0]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:151]
-WARNING: [Vivado 12-584] No ports matched 'an[0]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:152]
-WARNING: [Vivado 12-584] No ports matched 'an[1]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:153]
-WARNING: [Vivado 12-584] No ports matched 'an[1]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:154]
-WARNING: [Vivado 12-584] No ports matched 'an[2]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:155]
-WARNING: [Vivado 12-584] No ports matched 'an[2]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:156]
-WARNING: [Vivado 12-584] No ports matched 'an[3]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:157]
-WARNING: [Vivado 12-584] No ports matched 'an[3]'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:158]
-WARNING: [Vivado 12-584] No ports matched 'vauxp6'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:245]
-WARNING: [Vivado 12-584] No ports matched 'vauxp6'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:246]
-WARNING: [Vivado 12-584] No ports matched 'vauxp14'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:248]
-WARNING: [Vivado 12-584] No ports matched 'vauxp14'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:249]
-WARNING: [Vivado 12-584] No ports matched 'vauxp7'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:251]
-WARNING: [Vivado 12-584] No ports matched 'vauxp7'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:252]
-WARNING: [Vivado 12-584] No ports matched 'vauxp15'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:254]
-WARNING: [Vivado 12-584] No ports matched 'vauxp15'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:255]
-WARNING: [Vivado 12-584] No ports matched 'vauxn6'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:257]
-WARNING: [Vivado 12-584] No ports matched 'vauxn6'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:258]
-WARNING: [Vivado 12-584] No ports matched 'vauxn14'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:260]
-WARNING: [Vivado 12-584] No ports matched 'vauxn14'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:261]
-WARNING: [Vivado 12-584] No ports matched 'vauxn7'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:263]
-WARNING: [Vivado 12-584] No ports matched 'vauxn7'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:264]
-WARNING: [Vivado 12-584] No ports matched 'vauxn15'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:266]
-WARNING: [Vivado 12-584] No ports matched 'vauxn15'. [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc:267]
-Finished Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/vga_top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/vga_top_propImpl.xdc].
+Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0_in_context.xdc] for cell 'vga_ctrl_block_wrapper_i/vga_ctrl_block_i/clk_wiz_0'
+Finished Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.gen/sources_1/bd/vga_ctrl_block/ip/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0/vga_ctrl_block_clk_wiz_0_0_in_context.xdc] for cell 'vga_ctrl_block_wrapper_i/vga_ctrl_block_i/clk_wiz_0'
+Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc]
+Finished Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.srcs/constrs_1/new/vga_constr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/vga_top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/vga_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.runs/synth_1/dont_touch.xdc]
+Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2577.684 ; gain = 0.000 ; free physical = 1240 ; free virtual = 12332
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2595.293 ; gain = 0.000 ; free physical = 1440 ; free virtual = 11793
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2577.719 ; gain = 0.000 ; free physical = 1240 ; free virtual = 12332
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2595.328 ; gain = 0.000 ; free physical = 1438 ; free virtual = 11792
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2577.719 ; gain = 714.344 ; free physical = 1254 ; free virtual = 12347
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2595.328 ; gain = 729.984 ; free physical = 1466 ; free virtual = 11820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35ticpg236-1L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2585.688 ; gain = 722.312 ; free physical = 1254 ; free virtual = 12347
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2603.297 ; gain = 737.953 ; free physical = 1466 ; free virtual = 11820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2585.688 ; gain = 722.312 ; free physical = 1254 ; free virtual = 12347
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2603.297 ; gain = 737.953 ; free physical = 1471 ; free virtual = 11825
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'calc_corner'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'rasterizer'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                            00001 |                              000
+                    LOAD |                            00010 |                              001
+                    MULT |                            00100 |                              011
+               SUB_STORE |                            01000 |                              100
+                 DONE_ST |                            10000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'calc_corner'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                           000001 |                              000
+             WAIT_CORNER |                           000010 |                              001
+              EVAL_PIXEL |                           000100 |                              010
+               DRAW_WAIT |                           001000 |                              011
+                 ADVANCE |                           010000 |                              100
+                FINISHED |                           100000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'rasterizer'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2585.688 ; gain = 722.312 ; free physical = 1251 ; free virtual = 12345
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2603.297 ; gain = 737.953 ; free physical = 1460 ; free virtual = 11815
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   10 Bit       Adders := 2     
+	   3 Input   23 Bit       Adders := 4     
+	   2 Input   23 Bit       Adders := 3     
+	   3 Input   11 Bit       Adders := 2     
+	   2 Input   10 Bit       Adders := 4     
+	   2 Input    9 Bit       Adders := 3     
+	   2 Input    8 Bit       Adders := 3     
+	   2 Input    4 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 1     
 +---Registers : 
-	               10 Bit    Registers := 2     
+	               23 Bit    Registers := 9     
+	               22 Bit    Registers := 2     
+	               11 Bit    Registers := 6     
+	               10 Bit    Registers := 17    
+	                9 Bit    Registers := 3     
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 6     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 23    
++---RAMs : 
+	             300K Bit	(76800 X 4 bit)          RAMs := 2     
++---Muxes : 
+	   2 Input   23 Bit        Muxes := 3     
+	   6 Input   23 Bit        Muxes := 6     
+	   2 Input   17 Bit        Muxes := 2     
+	   2 Input   10 Bit        Muxes := 29    
+	   6 Input   10 Bit        Muxes := 2     
+	   6 Input    6 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 5     
+	   5 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 7     
+	   5 Input    3 Bit        Muxes := 1     
+	   5 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 13    
+	   4 Input    1 Bit        Muxes := 3     
+	   5 Input    1 Bit        Muxes := 4     
+	   6 Input    1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -210,31 +243,108 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3917] design vga_top has port vga_red[3] driven by constant 0
-WARNING: [Synth 8-3917] design vga_top has port vga_red[2] driven by constant 0
-WARNING: [Synth 8-3917] design vga_top has port vga_red[1] driven by constant 0
-WARNING: [Synth 8-3917] design vga_top has port vga_red[0] driven by constant 0
-WARNING: [Synth 8-3917] design vga_top has port vga_blue[1] driven by constant 0
+DSP Report: Generating DSP prod20, operation Mode is: (D-A)*B.
+DSP Report: operator prod20 is absorbed into DSP prod20.
+DSP Report: operator d_py_yA is absorbed into DSP prod20.
+DSP Report: Generating DSP prod10, operation Mode is: (D-A)*B.
+DSP Report: operator prod10 is absorbed into DSP prod10.
+DSP Report: operator d_px_xA is absorbed into DSP prod10.
+WARNING: [Synth 8-3917] design vga_top has port an[3] driven by constant 1
+WARNING: [Synth 8-3917] design vga_top has port an[2] driven by constant 1
+WARNING: [Synth 8-3917] design vga_top has port dp driven by constant 1
+WARNING: [Synth 8-3332] Sequential element (shape_renderer_i/u_fb/u_fb0/mem_reg_mux_sel_a_pos_1) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (shape_renderer_i/u_fb/u_fb0/mem_reg_mux_sel_a_pos_1__0) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (shape_renderer_i/u_fb/u_fb0/mem_reg_mux_sel_a_pos_1__1) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (shape_renderer_i/u_fb/u_fb0/mem_reg_mux_sel_a_pos_1__2) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (shape_renderer_i/u_fb/u_fb1/mem_reg_mux_sel_a_pos_1) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (shape_renderer_i/u_fb/u_fb1/mem_reg_mux_sel_a_pos_1__0) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (shape_renderer_i/u_fb/u_fb1/mem_reg_mux_sel_a_pos_1__1) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (shape_renderer_i/u_fb/u_fb1/mem_reg_mux_sel_a_pos_1__2) is unused and will be removed from module vga_top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2585.688 ; gain = 722.312 ; free physical = 1237 ; free virtual = 12335
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 2611.297 ; gain = 745.953 ; free physical = 1423 ; free virtual = 11784
+---------------------------------------------------------------------------------
+ Sort Area is  prod10_0 : 0 0 : 984 984 : Used 1 time 0
+ Sort Area is  prod20_2 : 0 0 : 984 984 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------+-------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                          | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|vga_top     | shape_renderer_i/u_fb/u_fb0/mem_reg | 75 K x 4(READ_FIRST)   | W |   | 75 K x 4(WRITE_FIRST)  |   | R | Port A and B     | 0      | 12     | 
+|vga_top     | shape_renderer_i/u_fb/u_fb1/mem_reg | 75 K x 4(READ_FIRST)   | W |   | 75 K x 4(WRITE_FIRST)  |   | R | Port A and B     | 0      | 12     | 
++------------+-------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|calc_corner | (D-A)*B     | 10     | 11     | -      | 10     | 22     | 0    | 0    | -    | 0    | 0     | 0    | 0    | 
+|calc_corner | (D-A)*B     | 10     | 11     | -      | 10     | 22     | 0    | 0    | -    | 0    | 0     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2665.688 ; gain = 802.312 ; free physical = 1171 ; free virtual = 12266
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2725.297 ; gain = 859.953 ; free physical = 1280 ; free virtual = 11640
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2694.734 ; gain = 831.359 ; free physical = 1148 ; free virtual = 12243
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2819.922 ; gain = 954.578 ; free physical = 1187 ; free virtual = 11548
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+-------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                          | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|vga_top     | shape_renderer_i/u_fb/u_fb0/mem_reg | 75 K x 4(READ_FIRST)   | W |   | 75 K x 4(WRITE_FIRST)  |   | R | Port A and B     | 0      | 12     | 
+|vga_top     | shape_renderer_i/u_fb/u_fb1/mem_reg | 75 K x 4(READ_FIRST)   | W |   | 75 K x 4(WRITE_FIRST)  |   | R | Port A and B     | 0      | 12     | 
++------------+-------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb0/mem_reg_0_1' (RAMB36E1) to 'shape_renderer_i/u_fb/u_fb0/mem_reg_0_0'
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb0/mem_reg_0_2' (RAMB36E1) to 'shape_renderer_i/u_fb/u_fb0/mem_reg_0_0'
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb0/mem_reg_0_3' (RAMB36E1) to 'shape_renderer_i/u_fb/u_fb0/mem_reg_0_0'
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb0/mem_reg_1_1' (RAMB36E1_1) to 'shape_renderer_i/u_fb/u_fb0/mem_reg_1_0'
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb0/mem_reg_1_2' (RAMB36E1_1) to 'shape_renderer_i/u_fb/u_fb0/mem_reg_1_0'
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb0/mem_reg_1_3' (RAMB36E1_1) to 'shape_renderer_i/u_fb/u_fb0/mem_reg_1_0'
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb0/mem_reg_1_1__0' (RAMB36E1_2) to 'shape_renderer_i/u_fb/u_fb0/mem_reg_1_0__0'
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb0/mem_reg_1_2__0' (RAMB36E1_2) to 'shape_renderer_i/u_fb/u_fb0/mem_reg_1_0__0'
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb0/mem_reg_1_3__0' (RAMB36E1_2) to 'shape_renderer_i/u_fb/u_fb0/mem_reg_1_0__0'
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb1/mem_reg_0_1' (RAMB36E1) to 'shape_renderer_i/u_fb/u_fb1/mem_reg_0_0'
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb1/mem_reg_0_2' (RAMB36E1) to 'shape_renderer_i/u_fb/u_fb1/mem_reg_0_0'
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb1/mem_reg_0_3' (RAMB36E1) to 'shape_renderer_i/u_fb/u_fb1/mem_reg_0_0'
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb1/mem_reg_1_1' (RAMB36E1_1) to 'shape_renderer_i/u_fb/u_fb1/mem_reg_1_0'
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb1/mem_reg_1_2' (RAMB36E1_1) to 'shape_renderer_i/u_fb/u_fb1/mem_reg_1_0'
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb1/mem_reg_1_3' (RAMB36E1_1) to 'shape_renderer_i/u_fb/u_fb1/mem_reg_1_0'
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb1/mem_reg_1_1__0' (RAMB36E1_2) to 'shape_renderer_i/u_fb/u_fb1/mem_reg_1_0__0'
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb1/mem_reg_1_2__0' (RAMB36E1_2) to 'shape_renderer_i/u_fb/u_fb1/mem_reg_1_0__0'
+INFO: [Synth 8-223] decloning instance 'shape_renderer_i/u_fb/u_fb1/mem_reg_1_3__0' (RAMB36E1_2) to 'shape_renderer_i/u_fb/u_fb1/mem_reg_1_0__0'
+INFO: [Synth 8-7052] The timing for the instance shape_renderer_i/u_fb/u_fb0/mem_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance shape_renderer_i/u_fb/u_fb0/mem_reg_1_0__0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance shape_renderer_i/u_fb/u_fb1/mem_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance shape_renderer_i/u_fb/u_fb1/mem_reg_1_0__0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2694.734 ; gain = 831.359 ; free physical = 1148 ; free virtual = 12243
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2819.922 ; gain = 954.578 ; free physical = 1188 ; free virtual = 11548
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -252,41 +362,50 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2882.547 ; gain = 1019.172 ; free physical = 977 ; free virtual = 12072
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2959.734 ; gain = 1094.391 ; free physical = 1073 ; free virtual = 11434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2882.547 ; gain = 1019.172 ; free physical = 977 ; free virtual = 12072
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2959.734 ; gain = 1094.391 ; free physical = 1073 ; free virtual = 11434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2882.547 ; gain = 1019.172 ; free physical = 977 ; free virtual = 12072
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2959.734 ; gain = 1094.391 ; free physical = 1073 ; free virtual = 11434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2882.547 ; gain = 1019.172 ; free physical = 977 ; free virtual = 12072
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2959.734 ; gain = 1094.391 ; free physical = 1073 ; free virtual = 11434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2882.547 ; gain = 1019.172 ; free physical = 977 ; free virtual = 12072
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2962.703 ; gain = 1097.359 ; free physical = 1072 ; free virtual = 11433
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2882.547 ; gain = 1019.172 ; free physical = 977 ; free virtual = 12072
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2962.703 ; gain = 1097.359 ; free physical = 1072 ; free virtual = 11433
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|calc_corner | (D-A*B)'    | 8      | 18     | -      | 8      | 22     | 0    | 0    | -    | 0    | 0     | 0    | 1    | 
+|calc_corner | (D-A*B)'    | 9      | 18     | -      | 9      | 22     | 0    | 0    | -    | 0    | 0     | 0    | 1    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
 
 Report BlackBoxes: 
 +------+---------------------------+----------+
@@ -300,38 +419,45 @@ Report Cell Usage:
 |      |Cell                     |Count |
 +------+-------------------------+------+
 |1     |vga_ctrl_block_clk_wiz_0 |     1|
-|2     |LUT1                     |     1|
-|3     |LUT2                     |     3|
-|4     |LUT3                     |     3|
-|5     |LUT4                     |     5|
-|6     |LUT5                     |     7|
-|7     |LUT6                     |    15|
-|8     |FDCE                     |    20|
-|9     |IBUF                     |     1|
-|10    |OBUF                     |    15|
+|2     |CARRY4                   |   134|
+|3     |DSP48E1                  |     2|
+|4     |LUT1                     |    28|
+|5     |LUT2                     |   340|
+|6     |LUT3                     |    60|
+|7     |LUT4                     |   252|
+|8     |LUT5                     |   109|
+|9     |LUT6                     |   171|
+|10    |RAMB36E1                 |     6|
+|13    |FDCE                     |   590|
+|14    |FDPE                     |    20|
+|15    |FDRE                     |     5|
+|16    |IBUF                     |     7|
+|17    |OBUF                     |    27|
 +------+-------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2882.547 ; gain = 1019.172 ; free physical = 977 ; free virtual = 12072
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2962.703 ; gain = 1097.359 ; free physical = 1072 ; free virtual = 11433
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2882.547 ; gain = 924.398 ; free physical = 977 ; free virtual = 12072
-Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2882.555 ; gain = 1019.172 ; free physical = 977 ; free virtual = 12072
+Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2962.703 ; gain = 993.586 ; free physical = 1085 ; free virtual = 11446
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2962.711 ; gain = 1097.359 ; free physical = 1086 ; free virtual = 11447
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2882.555 ; gain = 0.000 ; free physical = 977 ; free virtual = 12072
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2962.711 ; gain = 0.000 ; free physical = 1121 ; free virtual = 11482
+INFO: [Netlist 29-17] Analyzing 142 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 2 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2938.574 ; gain = 0.000 ; free physical = 1133 ; free virtual = 12228
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3018.730 ; gain = 0.000 ; free physical = 1120 ; free virtual = 11480
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 903f491c
+Synth Design complete | Checksum: 8ed8b214
 INFO: [Common 17-83] Releasing license: Vivado_Synthesis
-27 Infos, 76 Warnings, 0 Critical Warnings and 0 Errors encountered.
+77 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 2938.609 ; gain = 1213.445 ; free physical = 1133 ; free virtual = 12228
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2146.423; main = 1944.857; forked = 277.522
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3892.332; main = 2938.578; forked = 1046.594
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.586 ; gain = 0.000 ; free physical = 1133 ; free virtual = 12228
-INFO: [Common 17-1381] The checkpoint '/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/vga_ctrl/vga_ctrl.runs/synth_1/vga_top.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:36 . Memory (MB): peak = 3018.766 ; gain = 1294.602 ; free physical = 1125 ; free virtual = 11486
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2215.211; main = 2018.304; forked = 278.533
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3969.520; main = 3018.734; forked = 1046.594
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3042.742 ; gain = 0.000 ; free physical = 1125 ; free virtual = 11486
+INFO: [Common 17-1381] The checkpoint '/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/vivado/vga_ctrl/vga_ctrl.runs/synth_1/vga_top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file vga_top_utilization_synth.rpt -pb vga_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jul 10 11:53:46 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 23 19:39:24 2026...

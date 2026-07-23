@@ -1,9 +1,35 @@
 Vivado Simulator v2026.1
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: /home/user/Vivado/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_vga_driver_behav xil_defaultlib.tb_vga_driver xil_defaultlib.glbl -log elaborate.log 
+Running: /home/user/Vivado/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_vga_top_behav xil_defaultlib.tb_vga_top xil_defaultlib.glbl -log elaborate.log 
 INFO: [XSIM 43-3493] Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 9 differs from formal bit length 12 for port 'x0' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/vga_top.v:121]
+WARNING: [VRFC 10-3091] actual bit length 9 differs from formal bit length 12 for port 'x1' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/vga_top.v:122]
+WARNING: [VRFC 10-3091] actual bit length 9 differs from formal bit length 12 for port 'x2' [/home/user/Desktop/Personal_Stuff/Homework/an4/PRACTICA_CAPGEMINI/repo/src/rtl/top/vga_top.v:123]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=36.37...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.vga_ctrl_block_clk_wiz_0_0_clk_w...
+Compiling module xil_defaultlib.vga_ctrl_block_clk_wiz_0_0
+Compiling module xil_defaultlib.vga_ctrl_block
+Compiling module xil_defaultlib.vga_ctrl_block_wrapper
+Compiling module xil_defaultlib.triangle_controller(H_ACTIVE=320...
+Compiling module xil_defaultlib.vga_driver_default
+Compiling module xil_defaultlib.bounding_box(COORD_W=12,SCREEN_W...
+Compiling module xil_defaultlib.calc_corner_default
+Compiling module xil_defaultlib.rasterizer(SCREEN_W=320,SCREEN_H...
+Compiling module xil_defaultlib.framebuffer_default
+Compiling module xil_defaultlib.framebuffer_dbl_default
+Compiling module xil_defaultlib.shape_renderer
+Compiling module xil_defaultlib.vga_fb_interface_default
+Compiling module xil_defaultlib.fps_counter
+Compiling module xil_defaultlib.vga_top
+Compiling module xil_defaultlib.tb_vga_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_vga_top_behav

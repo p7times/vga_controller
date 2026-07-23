@@ -1,30 +1,10 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="user" Host="nemesiseanu" Pid="38947" HostCore="12" HostMemory="16279948">
+    <Process Command="vivado" Owner="user" Host="nemesiseanu" Pid="559586" HostCore="12" HostMemory="16279944">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="user" Host="nemesiseanu" Pid="48210" HostCore="12" HostMemory="16279948">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="user" Host="nemesiseanu" Pid="56690" HostCore="12" HostMemory="16279948">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="user" Host="nemesiseanu" Pid="65332" HostCore="12" HostMemory="16279948">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="user" Host="nemesiseanu" Pid="74494" HostCore="12" HostMemory="16279948">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="user" Host="nemesiseanu" Pid="109883" HostCore="12" HostMemory="16279948">
+    <Process Command="vivado" Owner="user" Host="nemesiseanu" Pid="671611" HostCore="12" HostMemory="16279944">
     </Process>
 </ProcessHandle>
